@@ -1,5 +1,6 @@
 <script>
   import { CURRENT_TIMER, CONFIG } from "./settings.js";
+  import {clamp} from "./utility";
 
   export let ID_PREFIX;
   export let ADJ_STEP = 1;
@@ -9,9 +10,7 @@
   function update_length(adj) {
     let current_length = $CONFIG[ID_PREFIX];
     current_length += adj;
-    current_length = current_length < CAPS.min ? CAPS.min : current_length;
-    current_length = current_length > CAPS.max ? CAPS.max : current_length;
-    $CONFIG[ID_PREFIX] = current_length;
+    $CONFIG[ID_PREFIX] = clamp(current_length, CAPS.min, CAPS.max);
     $CURRENT_TIMER[ID_PREFIX] = $CONFIG[ID_PREFIX] * 60;
   }
 </script>
