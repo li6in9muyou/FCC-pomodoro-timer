@@ -1,5 +1,5 @@
-// this file will not afect the sandbox but will
-// afect the deployment and dowload
+// this file will not affect the sandbox but will
+// affect the deployment and download
 
 import svelte from "rollup-plugin-svelte";
 import resolve from "rollup-plugin-node-resolve";
